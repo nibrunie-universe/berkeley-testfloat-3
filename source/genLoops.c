@@ -1426,6 +1426,27 @@ void gen_a_f32_z_bf16( bfloat16_t trueFunction( float32_t ) )
     }
 
 }
+
+void gen_abz_bf16( bfloat16_t trueFunction( bfloat16_t, bfloat16_t ) )
+{
+    union ui16_bf16 u;
+    uint_fast8_t trueFlags;
+
+    genCases_bf16_ab_init();
+    checkEnoughCases();
+    while ( ! genLoops_stop && (! genCases_done || genLoops_forever) ) {
+        genCases_bf16_ab_next();
+        u.f = genCases_bf16_a;
+        writeHex_ui16( u.ui, ' ' );
+        u.f = genCases_bf16_b;
+        writeHex_ui16( u.ui, ' ' );
+        *genLoops_trueFlagsPtr = 0;
+        u.f = trueFunction( genCases_bf16_a, genCases_bf16_b );
+        trueFlags = *genLoops_trueFlagsPtr;
+        if ( writeGenOutputs_ui16( u.ui, trueFlags ) ) break;
+    }
+
+}
 #endif // BFLOAT16
 
 void

@@ -167,6 +167,7 @@ void gen_ab_f16_z_bool( bool ( float16_t, float16_t ) );
 #ifdef BFLOAT16
 void gen_a_bf16_z_f32( float32_t ( bfloat16_t ) );
 void gen_a_f32_z_bf16( bfloat16_t ( float32_t ) );
+void gen_abz_bf16( bfloat16_t ( bfloat16_t, bfloat16_t ) );
 #endif // BFLOAT16
 
 void

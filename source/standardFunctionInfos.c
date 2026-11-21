@@ -178,6 +178,7 @@ const struct standardFunctionInfo standardFunctionInfos[] = {
 #ifdef BFLOAT16
     { "bf16_to_f32",                     BF16_TO_F32,          0,      0     },
     { "f32_to_bf16",                     F32_TO_BF16,          0,      0     },
+    { "bf16_add",                        BF16_ADD,             0,      0     },
 #endif // BFLOAT16
     /*------------------------------------------------------------------------
     *------------------------------------------------------------------------*/

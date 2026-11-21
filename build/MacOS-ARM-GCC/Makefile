@@ -47,7 +47,7 @@ SOFTFLOAT_H = \
   $(SOFTFLOAT_INCLUDE_DIR)/softfloat.h
 SOFTFLOAT_LIB = $(SOFTFLOAT_DIR)/build/$(PLATFORM)/softfloat$(LIB)
 
-TESTFLOAT_OPTS ?= -DFLOAT16  -DFLOAT64 -DEXTFLOAT80 -DFLOAT128 -DFLOAT_ROUND_ODD
+TESTFLOAT_OPTS ?= -DFLOAT16 -DBFLOAT16 -DFLOAT64 -DEXTFLOAT80 -DFLOAT128 -DFLOAT_ROUND_ODD
 
 DELETE = rm -f
 C_INCLUDES = \
@@ -80,6 +80,7 @@ OBJS_GENCASES = \
   genCases_i32$(OBJ) \
   genCases_i64$(OBJ) \
   genCases_f16$(OBJ) \
+  genCases_bf16$(OBJ) \
   genCases_f32$(OBJ) \
   genCases_f64$(OBJ) \
   genCases_extF80$(OBJ) \
@@ -91,6 +92,7 @@ OBJS_WRITECASE = \
   writeCase_a_f16$(OBJ) \
   writeCase_ab_f16$(OBJ) \
   writeCase_abc_f16$(OBJ) \
+  writeCase_a_bf16$(OBJ) \
   writeCase_a_f32$(OBJ) \
   writeCase_ab_f32$(OBJ) \
   writeCase_abc_f32$(OBJ) \
@@ -106,6 +108,7 @@ OBJS_WRITECASE = \
   writeCase_z_ui32$(OBJ) \
   writeCase_z_ui64$(OBJ) \
   writeCase_z_f16$(OBJ) \
+  writeCase_z_bf16$(OBJ) \
   writeCase_z_f32$(OBJ) \
   writeCase_z_f64$(OBJ) \
   writeCase_z_extF80M$(OBJ) \
@@ -149,6 +152,8 @@ OBJS_TEST = \
   test_abz_f16$(OBJ) \
   test_abcz_f16$(OBJ) \
   test_ab_f16_z_bool$(OBJ) \
+  test_a_bf16_z_f32$(OBJ) \
+  test_a_f32_z_bf16$(OBJ) \
   test_a_f32_z_ui32_rx$(OBJ) \
   test_a_f32_z_ui64_rx$(OBJ) \
   test_a_f32_z_i32_rx$(OBJ) \

@@ -148,6 +148,7 @@ const struct functionInfo functionInfos[NUM_FUNCTIONS] = {
 #ifdef BFLOAT16
     { "bf16_to_f32",    ARG_1 },
     { "f32_to_bf16",    ARG_1 },
+    { "bf16_add",       ARG_2 | EFF_R },
 #endif // BFLOAT16
     /*------------------------------------------------------------------------
     *------------------------------------------------------------------------*/
